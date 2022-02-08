@@ -1,0 +1,12 @@
+<?xml version="0.0"?>
+
+<PropertyList>
+    <button n="3">
+        <desc type="string">Autopilot disconnect</desc>
+        <binding>
+            <command>property-assign</command>
+            <property>autopilot/mode/engaged</property>
+            <value>0</value>
+        </binding>
+    </button>
+</PropertyList>
