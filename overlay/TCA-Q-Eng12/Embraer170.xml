@@ -1,0 +1,115 @@
+<?xml version="0.0"?>
+
+<PropertyList>
+  <button n="2">
+    <desc>Engine / Cutoff Switch Left</desc>
+    <binding>
+        <command type="string">property-assign</command>
+        <property type="string">/fadec/engine-switch[0]</property>
+        <value type="int">2</value>
+    </binding>
+
+    <mod-up>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/fadec/engine-switch[0]</property>
+            <value type="int">0</value>
+        </binding>
+    </mod-up>
+  </button>
+  <button n="3">
+    <desc>Engine / Cutoff Switch Right</desc>
+    <binding>
+        <command type="string">property-assign</command>
+        <property type="string">/fadec/engine-switch[1]</property>
+        <value type="int">2</value>
+    </binding>
+    <mod-up>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/fadec/engine-switch[1]</property>
+            <value type="int">0</value>
+        </binding>
+    </mod-up>
+  </button>
+  <button n="4">
+    <desc>Starter Left / Taxi Lights</desc>
+    <binding>
+        <command type="string">property-toggle</command>
+        <property type="string">/controls/lighting/taxi-lights[0]</property>
+    </binding>
+    <binding>
+        <command type="string">property-assign</command>
+        <property type="string">/controls/lighting/taxi-lights[1]</property>
+        <property type="string">/controls/lighting/taxi-lights[0]</property>
+    </binding>
+  </button>
+  <button n="5">
+    <desc>Starter Right / Landing Lights</desc>
+    <binding>
+        <command type="string">property-toggle</command>
+        <property type="string">/controls/lighting/landing-lights[0]</property>
+    </binding>
+    <binding>
+        <command type="string">property-assign</command>
+        <property type="string">/controls/lighting/landing-lights[1]</property>
+        <property type="string">/controls/lighting/landing-lights[0]</property>
+    </binding>
+    <binding>
+        <command type="string">property-assign</command>
+        <property type="string">/controls/lighting/landing-lights[2]</property>
+        <property type="string">/controls/lighting/landing-lights[0]</property>
+    </binding>
+  </button>
+  <button n="6">
+    <desc>Ignition Knob Left</desc>
+    <binding>
+        <command type="string">property-assign</command>
+        <property type="string">/fadec/ignition-switch[0]</property>
+        <value type="int">0</value>
+    </binding>
+    <binding>
+        <command type="string">property-assign</command>
+        <property type="string">/fadec/ignition-switch[1]</property>
+        <value type="int">0</value>
+    </binding>
+    <mod-up>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/fadec/ignition-switch[0]</property>
+            <value type="int">1</value>
+        </binding>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/fadec/ignition-switch[1]</property>
+            <value type="int">1</value>
+        </binding>
+    </mod-up>
+  </button>
+  <button n="7">
+    <desc>Ignition Knob Right</desc>
+    <binding>
+        <command type="string">property-assign</command>
+        <property type="string">/fadec/ignition-switch[0]</property>
+        <value type="int">2</value>
+    </binding>
+    <binding>
+        <command type="string">property-assign</command>
+        <property type="string">/fadec/ignition-switch[1]</property>
+        <value type="int">2</value>
+    </binding>
+    <mod-up>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/fadec/ignition-switch[0]</property>
+            <value type="int">1</value>
+        </binding>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/fadec/ignition-switch[1]</property>
+            <value type="int">1</value>
+        </binding>
+    </mod-up>
+  </button>
+</PropertyList>
+

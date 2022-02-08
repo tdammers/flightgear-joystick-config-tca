@@ -1,0 +1,74 @@
+<?xml version="0.0"?>
+
+<PropertyList>
+  <button n="2">
+    <desc>Engine / Cutoff Switch Left</desc>
+    <binding>
+        <command>property-assign</command>
+        <property>controls/engines/engine[0]/cutoff</property>
+        <value type="bool">false</value>
+    </binding>
+
+    <mod-up>
+        <binding>
+            <command>property-assign</command>
+            <property>controls/engines/engine[0]/cutoff</property>
+            <value type="bool">true</value>
+        </binding>
+    </mod-up>
+  </button>
+  <button n="3">
+    <desc>Engine / Cutoff Switch Right</desc>
+    <binding>
+        <command>property-assign</command>
+        <property>controls/engines/engine[1]/cutoff</property>
+        <value type="bool">false</value>
+    </binding>
+    <mod-up>
+        <binding>
+            <command>property-assign</command>
+            <property>controls/engines/engine[1]/cutoff</property>
+            <value type="bool">true</value>
+        </binding>
+    </mod-up>
+  </button>
+  <button n="4">
+    <desc>Starter Left / Taxi Lights</desc>
+    <binding>
+        <command>property-toggle</command>
+        <property>controls/lighting/taxi-lights</property>
+    </binding>
+  </button>
+  <button n="5">
+    <desc>Starter Right / Landing Lights</desc>
+    <binding>
+        <command>property-toggle</command>
+        <property>controls/lighting/landing-light</property>
+    </binding>
+    <binding>
+        <command type="string">property-assign</command>
+        <property type="string">/controls/lighting/landing-light[1]</property>
+        <property type="string">/controls/lighting/landing-light[0]</property>
+    </binding>
+    <binding>
+        <command type="string">property-assign</command>
+        <property type="string">/controls/lighting/landing-light[2]</property>
+        <property type="string">/controls/lighting/landing-light[0]</property>
+    </binding>
+    <binding>
+        <command type="string">property-assign</command>
+        <property type="string">/controls/lighting/landing-lights</property>
+        <property type="string">/controls/lighting/landing-light[0]</property>
+    </binding>
+  </button>
+  <button n="6">
+    <desc>Ignition Knob Left</desc>
+    <mod-up>
+    </mod-up>
+  </button>
+  <button n="7">
+    <desc>Ignition Knob Right</desc>
+    <mod-up>
+    </mod-up>
+  </button>
+</PropertyList>

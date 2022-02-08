@@ -1,0 +1,206 @@
+<?xml version="0.0"?>
+
+<PropertyList>
+  <axis n="0">
+    <desc type="string">Throttle Engine 1</desc>
+    <binding>
+      <condition>
+        <property>/controls/engines/engine[0]/reverser</property>
+      </condition>
+      <command type="string">property-scale</command>
+      <property type="string">/controls/engines/engine[0]/throttle</property>
+      <factor type="double">4</factor>
+      <offset type="double">-0.75</offset>
+      <power type="double">1</power>
+    </binding>
+    <binding>
+      <condition>
+        <not>
+            <property>/controls/engines/engine[0]/reverser</property>
+        </not>
+      </condition>
+      <command type="string">property-scale</command>
+      <property type="string">/controls/engines/engine[0]/throttle</property>
+      <factor type="double">-2.2</factor>
+      <offset type="double">-0.45</offset>
+      <power type="double">1</power>
+    </binding>
+  </axis>
+  <button n="8">
+    <desc type="string">Engine 1 APR</desc>
+    <binding>
+        <command type="string">property-assign</command>
+        <property>/controls/engines/engine[0]/thrust-mode</property>
+        <value>3</value>
+    </binding>
+  </button>
+  <button n="9">
+    <desc type="string">Engine 1 TO</desc>
+    <binding>
+        <command type="string">property-assign</command>
+        <property>/controls/engines/engine[0]/thrust-mode</property>
+        <value>2</value>
+    </binding>
+  </button>
+  <button n="10">
+    <desc type="string">Engine 1 CLB</desc>
+    <binding>
+        <command type="string">property-assign</command>
+        <property>/controls/engines/engine[0]/thrust-mode</property>
+        <value>1</value>
+    </binding>
+    <mod-up>
+        <binding>
+            <command type="string">property-assign</command>
+            <property>/controls/engines/engine[0]/thrust-mode</property>
+            <value>0</value>
+        </binding>
+    </mod-up>
+  </button>
+
+  <axis n="1">
+    <desc type="string">Throttle Engine 2</desc>
+    <binding>
+      <condition>
+        <property>/controls/engines/engine[1]/reverser</property>
+      </condition>
+      <command type="string">property-scale</command>
+      <property type="string">/controls/engines/engine[1]/throttle</property>
+      <factor type="double">4</factor>
+      <offset type="double">-0.75</offset>
+      <power type="double">1</power>
+    </binding>
+    <binding>
+      <condition>
+        <not>
+            <property>/controls/engines/engine[1]/reverser</property>
+        </not>
+      </condition>
+      <command type="string">property-scale</command>
+      <property type="string">/controls/engines/engine[1]/throttle</property>
+      <factor type="double">-2.2</factor>
+      <offset type="double">-0.45</offset>
+      <power type="double">1</power>
+    </binding>
+  </axis>
+  <button n="12">
+    <desc type="string">Engine 1 APR</desc>
+    <binding>
+        <command type="string">property-assign</command>
+        <property>/controls/engines/engine[1]/thrust-mode</property>
+        <value>3</value>
+    </binding>
+  </button>
+  <button n="13">
+    <desc type="string">Engine 1 TO</desc>
+    <binding>
+        <command type="string">property-assign</command>
+        <property>/controls/engines/engine[1]/thrust-mode</property>
+        <value>2</value>
+    </binding>
+  </button>
+  <button n="14">
+    <desc type="string">Engine 1 CLB</desc>
+    <binding>
+        <command type="string">property-assign</command>
+        <property>/controls/engines/engine[1]/thrust-mode</property>
+        <value>1</value>
+    </binding>
+    <mod-up>
+        <binding>
+            <command type="string">property-assign</command>
+            <property>/controls/engines/engine[1]/thrust-mode</property>
+            <value>0</value>
+        </binding>
+    </mod-up>
+  </button>
+
+  <button n="2">
+    <desc>Engine / Cutoff Switch Left</desc>
+    <binding>
+        <command type="string">property-assign</command>
+        <property type="string">/controls/engines/engine[0]/cutoff</property>
+        <value type="bool">false</value>
+    </binding>
+
+    <mod-up>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/engines/engine[0]/cutoff</property>
+            <value type="bool">true</value>
+        </binding>
+    </mod-up>
+  </button>
+  <button n="3">
+    <desc>Engine / Cutoff Switch Right</desc>
+    <binding>
+        <command type="string">property-assign</command>
+        <property type="string">/controls/engines/engine[1]/cutoff</property>
+        <value type="bool">false</value>
+    </binding>
+
+    <mod-up>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/engines/engine[1]/cutoff</property>
+            <value type="bool">true</value>
+        </binding>
+    </mod-up>
+  </button>
+  <button n="4">
+    <desc>Starter Left / Taxi Lights</desc>
+    <binding>
+        <command type="string">property-toggle</command>
+        <property type="string">/controls/lighting/taxi-lights</property>
+    </binding>
+  </button>
+  <button n="5">
+    <desc>Starter Right / Landing Lights</desc>
+    <binding>
+        <command type="string">property-toggle</command>
+        <property type="string">/controls/lighting/landing-lights[0]</property>
+    </binding>
+    <binding>
+        <command type="string">property-assign</command>
+        <property type="string">/controls/lighting/landing-lights[1]</property>
+        <property type="string">/controls/lighting/landing-lights[0]</property>
+    </binding>
+    <binding>
+        <command type="string">property-assign</command>
+        <property type="string">/controls/lighting/landing-lights[2]</property>
+        <property type="string">/controls/lighting/landing-lights[0]</property>
+    </binding>
+  </button>
+  <button n="6">
+    <desc>Ignition Knob Left</desc>
+    <binding>
+        <command type="string">property-assign</command>
+        <property type="string">/controls/engines/engine[0]/starter-cmd</property>
+        <value type="bool">true</value>
+    </binding>
+    <mod-up>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/engines/engine[0]/starter-cmd</property>
+            <value type="bool">false</value>
+        </binding>
+    </mod-up>
+  </button>
+  <button n="7">
+    <desc>Ignition Knob Right</desc>
+    <binding>
+        <command type="string">property-assign</command>
+        <property type="string">/controls/engines/engine[1]/starter-cmd</property>
+        <value type="bool">true</value>
+    </binding>
+    <mod-up>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/engines/engine[1]/starter-cmd</property>
+            <value type="bool">false</value>
+        </binding>
+    </mod-up>
+  </button>
+</PropertyList>
+
+
