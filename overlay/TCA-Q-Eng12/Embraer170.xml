@@ -1,115 +1,197 @@
-<?xml version="0.0"?>
+<?xml version="1.0"?>
 
 <PropertyList>
-  <button n="2">
-    <desc>Engine / Cutoff Switch Left</desc>
-    <binding>
-        <command type="string">property-assign</command>
-        <property type="string">/fadec/engine-switch[0]</property>
-        <value type="int">2</value>
-    </binding>
-
-    <mod-up>
+    <axis n="0">
+        <desc type="string">Throttle Engine 1</desc>
+        <binding>
+            <condition>
+                <property>/controls/engines/engine[0]/reverser</property>
+            </condition>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/engines/engine[0]/throttle</property>
+            <factor type="double">4</factor>
+            <offset type="double">-0.75</offset>
+            <power type="double">1</power>
+        </binding>
+        <binding>
+            <condition>
+                <not>
+                    <property>/controls/engines/engine[0]/reverser</property>
+                </not>
+            </condition>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/engines/engine[0]/throttle</property>
+            <factor type="double">-0.85</factor>
+            <offset type="double">-0.43</offset>
+            <power type="double">1</power>
+        </binding>
+    </axis>
+    <axis n="1">
+        <desc type="string">Throttle Engine 2</desc>
+        <binding>
+            <condition>
+                <property>/controls/engines/engine[1]/reverser</property>
+            </condition>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/engines/engine[1]/throttle</property>
+            <factor type="double">4</factor>
+            <offset type="double">-0.75</offset>
+            <power type="double">1</power>
+        </binding>
+        <binding>
+            <condition>
+                <not>
+                    <property>/controls/engines/engine[1]/reverser</property>
+                </not>
+            </condition>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/engines/engine[1]/throttle</property>
+            <factor type="double">-0.85</factor>
+            <offset type="double">-0.43</offset>
+            <power type="double">1</power>
+        </binding>
+    </axis>
+    
+    <button n="0">
+        <desc type="string">A/T Disconnect</desc>
+        <binding>
+            <command type="string">property-assign</command>
+            <property>controls/autoflight/at-disconnect</property>
+            <value type="bool">true</value>
+        </binding>
+        <mod-up>
+            <binding>
+                <command type="string">property-assign</command>
+                <property>controls/autoflight/at-disconnect</property>
+                <value type="bool">false</value>
+            </binding>
+        </mod-up>
+    </button>
+    
+    <button n="1">
+        <name>q</name>
+        <desc>TO/GA button</desc>
+        <repeatable type="bool">true</repeatable>
+        <binding>
+            <command>property-assign</command>
+            <property>/it-autoflight/input/toga</property>
+            <value type="bool">true</value>
+        </binding>
+        <binding>
+            <command>property-assign</command>
+            <property>/controls/flight/steep-approach</property>
+            <value type="bool">false</value>
+        </binding>
+    </button>
+    <button n="2">
+        <desc>Engine / Cutoff Switch Left</desc>
         <binding>
             <command type="string">property-assign</command>
             <property type="string">/fadec/engine-switch[0]</property>
-            <value type="int">0</value>
+            <value type="int">2</value>
         </binding>
-    </mod-up>
-  </button>
-  <button n="3">
-    <desc>Engine / Cutoff Switch Right</desc>
-    <binding>
-        <command type="string">property-assign</command>
-        <property type="string">/fadec/engine-switch[1]</property>
-        <value type="int">2</value>
-    </binding>
-    <mod-up>
+        
+        <mod-up>
+            <binding>
+                <command type="string">property-assign</command>
+                <property type="string">/fadec/engine-switch[0]</property>
+                <value type="int">0</value>
+            </binding>
+        </mod-up>
+    </button>
+    <button n="3">
+        <desc>Engine / Cutoff Switch Right</desc>
         <binding>
             <command type="string">property-assign</command>
             <property type="string">/fadec/engine-switch[1]</property>
+            <value type="int">2</value>
+        </binding>
+        <mod-up>
+            <binding>
+                <command type="string">property-assign</command>
+                <property type="string">/fadec/engine-switch[1]</property>
+                <value type="int">0</value>
+            </binding>
+        </mod-up>
+    </button>
+    <button n="4">
+        <desc>Starter Left / Taxi Lights</desc>
+        <binding>
+            <command type="string">property-toggle</command>
+            <property type="string">/controls/lighting/taxi-lights[0]</property>
+        </binding>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/lighting/taxi-lights[1]</property>
+            <property type="string">/controls/lighting/taxi-lights[0]</property>
+        </binding>
+    </button>
+    <button n="5">
+        <desc>Starter Right / Landing Lights</desc>
+        <binding>
+            <command type="string">property-toggle</command>
+            <property type="string">/controls/lighting/landing-lights[0]</property>
+        </binding>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/lighting/landing-lights[1]</property>
+            <property type="string">/controls/lighting/landing-lights[0]</property>
+        </binding>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/lighting/landing-lights[2]</property>
+            <property type="string">/controls/lighting/landing-lights[0]</property>
+        </binding>
+    </button>
+    <button n="6">
+        <desc>Ignition Knob Left</desc>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/fadec/ignition-switch[0]</property>
             <value type="int">0</value>
         </binding>
-    </mod-up>
-  </button>
-  <button n="4">
-    <desc>Starter Left / Taxi Lights</desc>
-    <binding>
-        <command type="string">property-toggle</command>
-        <property type="string">/controls/lighting/taxi-lights[0]</property>
-    </binding>
-    <binding>
-        <command type="string">property-assign</command>
-        <property type="string">/controls/lighting/taxi-lights[1]</property>
-        <property type="string">/controls/lighting/taxi-lights[0]</property>
-    </binding>
-  </button>
-  <button n="5">
-    <desc>Starter Right / Landing Lights</desc>
-    <binding>
-        <command type="string">property-toggle</command>
-        <property type="string">/controls/lighting/landing-lights[0]</property>
-    </binding>
-    <binding>
-        <command type="string">property-assign</command>
-        <property type="string">/controls/lighting/landing-lights[1]</property>
-        <property type="string">/controls/lighting/landing-lights[0]</property>
-    </binding>
-    <binding>
-        <command type="string">property-assign</command>
-        <property type="string">/controls/lighting/landing-lights[2]</property>
-        <property type="string">/controls/lighting/landing-lights[0]</property>
-    </binding>
-  </button>
-  <button n="6">
-    <desc>Ignition Knob Left</desc>
-    <binding>
-        <command type="string">property-assign</command>
-        <property type="string">/fadec/ignition-switch[0]</property>
-        <value type="int">0</value>
-    </binding>
-    <binding>
-        <command type="string">property-assign</command>
-        <property type="string">/fadec/ignition-switch[1]</property>
-        <value type="int">0</value>
-    </binding>
-    <mod-up>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/fadec/ignition-switch[1]</property>
+            <value type="int">0</value>
+        </binding>
+        <mod-up>
+            <binding>
+                <command type="string">property-assign</command>
+                <property type="string">/fadec/ignition-switch[0]</property>
+                <value type="int">1</value>
+            </binding>
+            <binding>
+                <command type="string">property-assign</command>
+                <property type="string">/fadec/ignition-switch[1]</property>
+                <value type="int">1</value>
+            </binding>
+        </mod-up>
+    </button>
+    <button n="7">
+        <desc>Ignition Knob Right</desc>
         <binding>
             <command type="string">property-assign</command>
             <property type="string">/fadec/ignition-switch[0]</property>
-            <value type="int">1</value>
+            <value type="int">2</value>
         </binding>
         <binding>
             <command type="string">property-assign</command>
             <property type="string">/fadec/ignition-switch[1]</property>
-            <value type="int">1</value>
+            <value type="int">2</value>
         </binding>
-    </mod-up>
-  </button>
-  <button n="7">
-    <desc>Ignition Knob Right</desc>
-    <binding>
-        <command type="string">property-assign</command>
-        <property type="string">/fadec/ignition-switch[0]</property>
-        <value type="int">2</value>
-    </binding>
-    <binding>
-        <command type="string">property-assign</command>
-        <property type="string">/fadec/ignition-switch[1]</property>
-        <value type="int">2</value>
-    </binding>
-    <mod-up>
-        <binding>
-            <command type="string">property-assign</command>
-            <property type="string">/fadec/ignition-switch[0]</property>
-            <value type="int">1</value>
-        </binding>
-        <binding>
-            <command type="string">property-assign</command>
-            <property type="string">/fadec/ignition-switch[1]</property>
-            <value type="int">1</value>
-        </binding>
-    </mod-up>
-  </button>
+        <mod-up>
+            <binding>
+                <command type="string">property-assign</command>
+                <property type="string">/fadec/ignition-switch[0]</property>
+                <value type="int">1</value>
+            </binding>
+            <binding>
+                <command type="string">property-assign</command>
+                <property type="string">/fadec/ignition-switch[1]</property>
+                <value type="int">1</value>
+            </binding>
+        </mod-up>
+    </button>
 </PropertyList>
 
