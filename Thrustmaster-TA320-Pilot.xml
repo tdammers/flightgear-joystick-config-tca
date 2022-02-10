@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 
 <PropertyList>
-  <name type="string">Thrustmaster T.A320 Pilot</name>
-
-  <nasal>
-    <script><![CDATA[
+    <name type="string">Thrustmaster T.A320 Pilot</name>
+    
+    <nasal>
+        <script><![CDATA[
     var this = cmdarg().getParent();
 
     var load_overlay = func(name) {
@@ -46,78 +46,94 @@
     load_overlay(subtype);
     load_overlay(family);
 ]]></script>
-  </nasal>
-
-  <axis>
-    <desc type="string">Aileron</desc>
-    <binding>
-      <command type="string">property-scale</command>
-      <property type="string">/controls/flight/aileron</property>
-      <factor type="double">1</factor>
-      <offset type="double">0</offset>
-      <power type="double">1</power>
-    </binding>
-  </axis>
-  <axis n="1">
-    <desc type="string">Elevator</desc>
-    <binding>
-      <command type="string">property-scale</command>
-      <property type="string">/controls/flight/elevator</property>
-      <factor type="double">-1</factor>
-      <offset type="double">0</offset>
-      <power type="double">1</power>
-    </binding>
-  </axis>
-  <axis n="3">
-    <desc type="string">Mixture All Engines</desc>
-    <binding>
-      <command type="string">property-scale</command>
-      <property type="string">/controls/engines/mixture-all</property>
-      <factor type="double">1</factor>
-      <offset type="double">0</offset>
-      <power type="double">1</power>
-    </binding>
-  </axis>
-  <axis n="4">
-    <desc type="string">Aileron Trim inc.</desc>
-    <low>
-      <binding>
-        <command type="string">nasal</command>
-        <script type="string">controls.aileronTrim(1);</script>
-      </binding>
-      <repeatable type="bool">true</repeatable>
-    </low>
-    <high>
-      <binding>
-        <command type="string">nasal</command>
-        <script type="string">controls.aileronTrim(-1);</script>
-      </binding>
-      <repeatable type="bool">true</repeatable>
-    </high>
-  </axis>
-  <axis n="5">
-    <desc type="string">Elevator Trim inc.</desc>
-    <low>
-      <binding>
-        <command type="string">nasal</command>
-        <script type="string">controls.elevatorTrim(1);</script>
-      </binding>
-      <repeatable type="bool">true</repeatable>
-    </low>
-    <high>
-      <binding>
-        <command type="string">nasal</command>
-        <script type="string">controls.elevatorTrim(-1);</script>
-      </binding>
-      <repeatable type="bool">true</repeatable>
-    </high>
-  </axis>
-  <button n="3">
-    <desc type="string">Autopilot disconnect</desc>
-    <binding>
-      <command type="string">nasal</command>
-      <script type="string">controls.autopilotDisconnect();</script>
-    </binding>
-    <repeatable type="double">0</repeatable>
-  </button>
+    </nasal>
+    
+    <axis>
+        <desc type="string">Aileron</desc>
+        <binding>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/flight/aileron</property>
+            <factor type="double">1</factor>
+            <offset type="double">0</offset>
+            <power type="double">1</power>
+        </binding>
+    </axis>
+    <axis n="1">
+        <desc type="string">Elevator</desc>
+        <binding>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/flight/elevator</property>
+            <factor type="double">-1</factor>
+            <offset type="double">0</offset>
+            <power type="double">1</power>
+        </binding>
+    </axis>
+    <axis n="3">
+        <desc type="string">Mixture All Engines</desc>
+        <binding>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/engines/mixture-all</property>
+            <factor type="double">1</factor>
+            <offset type="double">0</offset>
+            <power type="double">1</power>
+        </binding>
+    </axis>
+    <axis n="4">
+        <desc type="string">Aileron Trim inc.</desc>
+        <low>
+            <binding>
+                <command type="string">nasal</command>
+                <script type="string">controls.aileronTrim(1);</script>
+            </binding>
+            <repeatable type="bool">true</repeatable>
+        </low>
+        <high>
+            <binding>
+                <command type="string">nasal</command>
+                <script type="string">controls.aileronTrim(-1);</script>
+            </binding>
+            <repeatable type="bool">true</repeatable>
+        </high>
+    </axis>
+    <axis n="5">
+        <desc type="string">Elevator Trim inc.</desc>
+        <low>
+            <binding>
+                <command type="string">nasal</command>
+                <script type="string">controls.elevatorTrim(1);</script>
+            </binding>
+            <repeatable type="bool">true</repeatable>
+        </low>
+        <high>
+            <binding>
+                <command type="string">nasal</command>
+                <script type="string">controls.elevatorTrim(-1);</script>
+            </binding>
+            <repeatable type="bool">true</repeatable>
+        </high>
+    </axis>
+    <button n="3">
+        <desc type="string">Autopilot disconnect</desc>
+        <binding>
+            <command type="string">nasal</command>
+            <script type="string">controls.autopilotDisconnect();</script>
+        </binding>
+        <repeatable type="double">0</repeatable>
+    </button>
+    <button n="6">
+        <desc>Parking Brake Release</desc>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/gear/brake-parking</property>
+            <value type="int">0</value>
+        </binding>
+    </button>
+    <button n="7">
+        <desc>Parking Brake Set</desc>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/gear/brake-parking</property>
+            <value type="int">1</value>
+        </binding>
+    </button>
 </PropertyList>
