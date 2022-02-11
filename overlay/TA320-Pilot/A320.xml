@@ -1,0 +1,12 @@
+<PropertyList>
+    <axis n="2">
+        <desc type="string">Tiller</desc>
+        <binding>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/gear/steering</property>
+            <factor type="double">1</factor>
+            <offset type="double">0</offset>
+            <power type="double">1</power>
+        </binding>
+    </axis>
+</PropertyList>

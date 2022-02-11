@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+    <nasal>
+        <script>
+        <![CDATA[
+            var dir = getprop("/sim/fg-home");
+            io.load_nasal(dir ~ '/Input/Joysticks/overlay/TCA-Q-Eng12/A320.nas', 'TA320_A320');
+        ]]>
+        </script>
+    </nasal>
+    
+    <axis n="0">
+        <desc type="string">Throttle Engine 1</desc>
+        <binding>
+            <condition>
+                <not>
+                    <property>/controls/engines/engine[0]/reverser</property>
+                </not>
+            </condition>
+            <command type="string">nasal</command>
+            <script>
+                var v = cmdarg().getValue('setting');
+                TA320_A320.setThrust(0, v);
+            </script>
+        </binding>
+        <binding>
+            <condition>
+                <property>/controls/engines/engine[0]/reverser</property>
+            </condition>
+            <command type="string">nasal</command>
+            <script>
+                var v = cmdarg().getValue('setting');
+                TA320_A320.setThrust(0, v);
+            </script>
+        </binding>
+    </axis>
+    <axis n="1">
+        <desc type="string">Throttle Engine 2</desc>
+        <binding>
+            <condition>
+                <not>
+                    <property>/controls/engines/engine[1]/reverser</property>
+                </not>
+            </condition>
+            <command type="string">nasal</command>
+            <script>
+                var v = cmdarg().getValue('setting');
+                TA320_A320.setThrust(1, v);
+            </script>
+        </binding>
+        <binding>
+            <condition>
+                <property>/controls/engines/engine[1]/reverser</property>
+            </condition>
+            <command type="string">nasal</command>
+            <script>
+                var v = cmdarg().getValue('setting');
+                TA320_A320.setThrust(1, v);
+            </script>
+        </binding>
+    </axis>
+</PropertyList>

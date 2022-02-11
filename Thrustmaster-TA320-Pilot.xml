@@ -5,46 +5,20 @@
     
     <nasal>
         <script><![CDATA[
-    var this = cmdarg().getParent();
-
-    var load_overlay = func(name) {
-        if (name == nil) return;
-        foreach (var dir; [getprop("/sim/fg-home"), getprop("/sim/fg-root")]) {
-            var file = dir ~ "/Input/Joysticks/overlay/TA320-Pilot/" ~ name ~ ".xml";
-            if (io.stat(file) != nil) {
-                print("Loading overlay " ~ file);
-                cmdarg().setValues({command: "nasal", script: ""});
-                io.read_properties(file, this);
-                props.runBinding(cmdarg());
-                break;
+            if (globals['tca'] == nil) {
+                foreach (var dir; [getprop("/sim/fg-home"), getprop("/sim/fg-root")]) {
+                    if (dir == nil) continue;
+                    var file = dir ~ "/Input/Joysticks/tca-common.nas";
+                    if (io.stat(file) != nil) {
+                        io.load_nasal(file, 'tca');
+                        print('Loaded ' ~ file);
+                    }
+                }
             }
-        }
-    }
 
-    var family_patterns = [
-        [ "777-*", "777" ],
-        [ "dhc6*", "DHC6" ],
-        [ "PA28-*", "P28A" ],
-        [ "Citation-II*", "C550" ],
-        [ "Embraer1[79][05]", "E170" ],
-        [ "EmbraerLineage1000", "E170" ],
-    ];
-
-    var subtype = getprop('/sim/aircraft');
-    var type = getprop('/sim/variant-of');
-    var family = nil;
-    foreach (var pattern; family_patterns) {
-        if (string.match(subtype, pattern[0])) {
-            family = pattern[1];
-            break;
-        }
-    }
-
-    print("Type: " ~ type ~ " [" ~ (subtype or '?') ~ "] (" ~ (family or '?') ~ ")");
-
-    load_overlay(type);
-    load_overlay(subtype);
-    load_overlay(family);
+            if (tca.family != nil) tca.load_overlay(cmdarg(), 'TA320-Pilot', tca.family);
+            if (tca.type != nil) tca.load_overlay(cmdarg(), 'TA320-Pilot', tca.type);
+            if (tca.subtype != nil) tca.load_overlay(cmdarg(), 'TA320-Pilot', tca.subtype);
 ]]></script>
     </nasal>
     
@@ -64,6 +38,16 @@
             <command type="string">property-scale</command>
             <property type="string">/controls/flight/elevator</property>
             <factor type="double">-1</factor>
+            <offset type="double">0</offset>
+            <power type="double">1</power>
+        </binding>
+    </axis>
+    <axis n="2">
+        <desc type="string">Tiller</desc>
+        <binding>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/gear/tiller-cmd-norm</property>
+            <factor type="double">1</factor>
             <offset type="double">0</offset>
             <power type="double">1</power>
         </binding>
