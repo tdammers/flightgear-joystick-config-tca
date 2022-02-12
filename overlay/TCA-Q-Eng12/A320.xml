@@ -3,7 +3,7 @@
 <PropertyList>
     <nasal>
         <script>
-        <![CDATA[
+            <![CDATA[
             var dir = getprop("/sim/fg-home");
             io.load_nasal(dir ~ '/Input/Joysticks/overlay/TCA-Q-Eng12/A320.nas', 'TA320_A320');
         ]]>
@@ -60,9 +60,19 @@
             </script>
         </binding>
     </axis>
-
+    
+    <button n="0">
+        <desc>A/T disconnect</desc>
+        <binding>
+            <command>nasal</command>
+            <script>
+                fcu.FCUController.ATDisc();
+            </script>
+        </binding>
+    </button>
+    
     <button n="2">
-        <desc>Engine / Cutoff Switch Left</desc>
+        <desc>Cutoff Switch Left</desc>
         <binding>
             <command type="string">property-assign</command>
             <property type="string">/controls/engines/engine[0]/cutoff-switch</property>
@@ -78,7 +88,7 @@
         </mod-up>
     </button>
     <button n="3">
-        <desc>Engine / Cutoff Switch Right</desc>
+        <desc>Cutoff Switch Right</desc>
         <binding>
             <command type="string">property-assign</command>
             <property type="string">/controls/engines/engine[1]/cutoff-switch</property>
@@ -90,6 +100,81 @@
                 <command type="string">property-assign</command>
                 <property type="string">/controls/engines/engine[1]/cutoff-switch</property>
                 <value type="bool">true</value>
+            </binding>
+        </mod-up>
+    </button>
+    
+    <button n="4">
+        <desc>Taxi Lights</desc>
+        <binding>
+            <command type="string">property-toggle</command>
+            <property type="string">/controls/lighting/turnoff-light-switch</property>
+        </binding>
+        <binding>
+            <command>nasal</command>
+            <script>TA320_A320.synchronizeLights();</script>
+        </binding>
+    </button>
+    <button n="5">
+        <desc>Landing Lights</desc>
+        <binding>
+            <condition>
+                <property>gear/gear[0]/wow</property>
+            </condition>
+            <command type="string">property-cycle</command>
+            <property type="string">/controls/switches/landing-lights-l</property>
+            <value>0.5</value>
+            <value>1</value>
+        </binding>
+        <binding>
+            <condition>
+                <not>
+                    <property>gear/gear[0]/wow</property>
+                </not>
+            </condition>
+            <command type="string">property-cycle</command>
+            <property type="string">/controls/switches/landing-lights-l</property>
+            <value>0</value>
+            <value>1</value>
+        </binding>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/switches/landing-lights-r</property>
+            <property type="string">/controls/switches/landing-lights-l</property>
+        </binding>
+        <binding>
+            <command>nasal</command>
+            <script>TA320_A320.synchronizeLights();</script>
+        </binding>
+    </button>
+    
+    <button n="6">
+        <desc>Ignition Knob Left</desc>
+        <binding>
+            <command type="string">property-assign</command>
+            <property>controls/engines/engine-start-switch</property>
+            <value type="int">0</value>
+        </binding>
+        <mod-up>
+            <binding>
+                <command type="string">property-assign</command>
+                <property>controls/engines/engine-start-switch</property>
+                <value type="int">1</value>
+            </binding>
+        </mod-up>
+    </button>
+    <button n="7">
+        <desc>Ignition Knob Right</desc>
+        <binding>
+            <command type="string">property-assign</command>
+            <property>controls/engines/engine-start-switch</property>
+            <value type="int">2</value>
+        </binding>
+        <mod-up>
+            <binding>
+                <command type="string">property-assign</command>
+                <property>controls/engines/engine-start-switch</property>
+                <value type="int">1</value>
             </binding>
         </mod-up>
     </button>

@@ -115,7 +115,7 @@
         </mod-up>
     </button>
     <button n="4">
-        <desc>Starter Left / Taxi Lights</desc>
+        <desc>Taxi Lights</desc>
         <binding>
             <command type="string">property-toggle</command>
             <property type="string">/controls/lighting/taxi-lights[0]</property>
@@ -127,7 +127,7 @@
         </binding>
     </button>
     <button n="5">
-        <desc>Starter Right / Landing Lights</desc>
+        <desc>Landing Lights</desc>
         <binding>
             <command type="string">property-toggle</command>
             <property type="string">/controls/lighting/landing-lights[0]</property>

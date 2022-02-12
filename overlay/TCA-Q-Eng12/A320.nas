@@ -27,3 +27,28 @@ var setThrust = func (e, v) {
         }
     }
 };
+
+var synchronizeLights = func {
+    if (getprop('controls/lighting/turnoff-light-switch')) {
+        if (getprop('controls/switches/landing-lights-l') == 1) {
+            # Landing lights are on: turn nose light to the "TO"
+            # position
+            setprop('controls/lighting/taxi-light-switch', 1);
+        }
+        else {
+            # Landing lights are off: use the "TAXI" switch position
+            setprop('controls/lighting/taxi-light-switch', 0.5);
+        }
+    }
+    else {
+        if (getprop('controls/switches/landing-lights-l') == 1) {
+            # Landing lights are on: keep nose light to the "TO"
+            # position
+            setprop('controls/lighting/taxi-light-switch', 1);
+        }
+        else {
+            # Landing lights are off: use the "OFF" switch position
+            setprop('controls/lighting/taxi-light-switch', 0);
+        }
+    }
+}
