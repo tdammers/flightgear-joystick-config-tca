@@ -21,7 +21,7 @@
         </binding>
     </axis>
     <button n="3">
-        <desc>AP Master</desc>
+        <desc>AP Disconnect</desc>
         <binding>
             <command>property-assign</command>
             <property>controls/autopilot/settings/apflag</property>
