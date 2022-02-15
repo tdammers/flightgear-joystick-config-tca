@@ -1,0 +1,104 @@
+<PropertyList>
+    <button n="2">
+        <desc>Cutoff Switches Left</desc>
+        <binding>
+            <command>property-assign</command>
+            <property>controls/engines/engine[0]/cutoff</property>
+            <value type="bool">false</value>
+        </binding>
+        <binding>
+            <command>property-assign</command>
+            <property>controls/engines/engine[1]/cutoff</property>
+            <value type="bool">false</value>
+        </binding>
+        
+        <mod-up>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/engines/engine[0]/cutoff</property>
+                <value type="bool">true</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/engines/engine[1]/cutoff</property>
+                <value type="bool">true</value>
+            </binding>
+        </mod-up>
+    </button>
+    <button n="3">
+        <desc>Cutoff Switch Right</desc>
+        <binding>
+            <command>property-assign</command>
+            <property>controls/engines/engine[2]/cutoff</property>
+            <value type="bool">false</value>
+        </binding>
+        <binding>
+            <command>property-assign</command>
+            <property>controls/engines/engine[3]/cutoff</property>
+            <value type="bool">false</value>
+        </binding>
+        
+        <mod-up>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/engines/engine[2]/cutoff</property>
+                <value type="bool">true</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/engines/engine[3]/cutoff</property>
+                <value type="bool">true</value>
+            </binding>
+        </mod-up>
+    </button>
+    <button n="6">
+        <desc>Starter Switches Left</desc>
+        <binding>
+            <command>property-assign</command>
+            <property>controls/engines/engine[0]/starter</property>
+            <value type="bool">true</value>
+        </binding>
+        <binding>
+            <command>property-assign</command>
+            <property>controls/engines/engine[1]/starter</property>
+            <value type="bool">true</value>
+        </binding>
+        <mod-up>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/engines/engine[0]/starter</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/engines/engine[1]/starter</property>
+                <value type="bool">false</value>
+            </binding>
+        </mod-up>
+    </button>
+    <button n="7">
+        <desc>Starter Switches Right</desc>
+        <binding>
+            <command>property-assign</command>
+            <property>controls/engines/engine[2]/starter</property>
+            <value type="bool">true</value>
+        </binding>
+        <binding>
+            <command>property-assign</command>
+            <property>controls/engines/engine[3]/starter</property>
+            <value type="bool">true</value>
+        </binding>
+        <mod-up>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/engines/engine[2]/starter</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/engines/engine[3]/starter</property>
+                <value type="bool">false</value>
+            </binding>
+        </mod-up>
+    </button>
+</PropertyList>
