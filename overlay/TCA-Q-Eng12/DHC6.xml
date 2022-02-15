@@ -2,7 +2,7 @@
 
 <PropertyList>
   <button n="2">
-    <desc>Engine / Cutoff Switch Left</desc>
+    <desc>Cutoff Switch Left</desc>
     <binding>
         <command>property-interpolate</command>
         <property>controls/engines/engine[0]/condition</property>
@@ -20,7 +20,7 @@
     </mod-up>
   </button>
   <button n="3">
-    <desc>Engine / Cutoff Switch Right</desc>
+    <desc>Cutoff Switch Right</desc>
     <binding>
         <command>property-interpolate</command>
         <property>controls/engines/engine[1]/condition</property>

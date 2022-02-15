@@ -5,16 +5,6 @@
     <desc type="string">Throttle Engine 1</desc>
     <binding>
       <condition>
-        <property>/controls/engines/engine[0]/reverser</property>
-      </condition>
-      <command type="string">property-scale</command>
-      <property type="string">/controls/engines/engine[0]/throttle</property>
-      <factor type="double">4</factor>
-      <offset type="double">-0.75</offset>
-      <power type="double">1</power>
-    </binding>
-    <binding>
-      <condition>
         <not>
             <property>/controls/engines/engine[0]/reverser</property>
         </not>
@@ -23,6 +13,16 @@
       <property type="string">/controls/engines/engine[0]/throttle</property>
       <factor type="double">-2.2</factor>
       <offset type="double">-0.45</offset>
+      <power type="double">1</power>
+    </binding>
+    <binding>
+      <condition>
+        <property>/controls/engines/engine[0]/reverser</property>
+      </condition>
+      <command type="string">property-scale</command>
+      <property type="string">/controls/engines/engine[0]/throttle</property>
+      <factor type="double">4</factor>
+      <offset type="double">-0.75</offset>
       <power type="double">1</power>
     </binding>
   </axis>
@@ -62,16 +62,6 @@
     <desc type="string">Throttle Engine 2</desc>
     <binding>
       <condition>
-        <property>/controls/engines/engine[1]/reverser</property>
-      </condition>
-      <command type="string">property-scale</command>
-      <property type="string">/controls/engines/engine[1]/throttle</property>
-      <factor type="double">4</factor>
-      <offset type="double">-0.75</offset>
-      <power type="double">1</power>
-    </binding>
-    <binding>
-      <condition>
         <not>
             <property>/controls/engines/engine[1]/reverser</property>
         </not>
@@ -80,6 +70,16 @@
       <property type="string">/controls/engines/engine[1]/throttle</property>
       <factor type="double">-2.2</factor>
       <offset type="double">-0.45</offset>
+      <power type="double">1</power>
+    </binding>
+    <binding>
+      <condition>
+        <property>/controls/engines/engine[1]/reverser</property>
+      </condition>
+      <command type="string">property-scale</command>
+      <property type="string">/controls/engines/engine[1]/throttle</property>
+      <factor type="double">4</factor>
+      <offset type="double">-0.75</offset>
       <power type="double">1</power>
     </binding>
   </axis>

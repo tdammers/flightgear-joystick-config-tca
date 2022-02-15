@@ -16,6 +16,7 @@ var load_overlay = func(carg, subdir, name) {
 
 var family_patterns = [
     [ "777-*", "777" ],
+    [ "747-*", "747" ],
     [ "dhc6*", "DHC6" ],
     [ "PA28-*", "P28A" ],
     [ "Citation-II*", "C550" ],
