@@ -1,6 +1,32 @@
 <?xml version="1.0"?>
 
 <PropertyList>
+    <button n="0">
+        <desc type="string">CWS</desc>
+        <binding>
+            <command type="string">property-assign</command>
+            <property>autopilot/kap140/settings/cws</property>
+            <value type="bool">true</value>
+        </binding>
+        <binding>
+            <command type="string">property-assign</command>
+            <property>it-stec55x/input/cws</property>
+            <value type="bool">true</value>
+        </binding>
+        <mod-up>
+            <binding>
+                <command type="string">property-assign</command>
+                <property>autopilot/kap140/settings/cws</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command type="string">property-assign</command>
+                <property>it-stec55x/input/cws</property>
+                <value type="bool">false</value>
+            </binding>
+        </mod-up>
+        <repeatable type="double">0</repeatable>
+    </button>
     <button n="3">
         <desc>AP Master</desc>
         <binding>

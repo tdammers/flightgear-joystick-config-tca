@@ -1,6 +1,22 @@
 <?xml version="1.0"?>
 
 <PropertyList>
+    <button n="0">
+        <name>c</name>
+        <desc>CWS Button</desc>
+        <binding>
+            <command>property-assign</command>
+            <property>autopilot/mode/cws</property>
+            <value>1</value>
+        </binding>
+        <mod-up>
+            <binding>
+                <command>property-assign</command>
+                <property>autopilot/mode/cws</property>
+                <value>0</value>
+            </binding>
+        </mod-up>
+    </button>
     <button n="3">
         <desc type="string">Autopilot disconnect</desc>
         <binding>

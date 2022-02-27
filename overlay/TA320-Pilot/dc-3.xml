@@ -19,7 +19,7 @@
                 </condition>
                 <command type="string">property-assign</command>
                 <property>autopilot/inputs/pitch-button</property>
-                <value>1</value>
+                <value>-1</value>
             </binding>
             <binding>
                 <condition>
@@ -49,7 +49,7 @@
                 </condition>
                 <command type="string">property-assign</command>
                 <property>autopilot/inputs/pitch-button</property>
-                <value>-1</value>
+                <value>1</value>
             </binding>
             <binding>
                 <condition>
