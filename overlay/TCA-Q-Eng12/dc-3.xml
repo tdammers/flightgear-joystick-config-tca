@@ -1,6 +1,27 @@
 <?xml version="1.0"?>
 
 <PropertyList>
+    <button n="0">
+        <desc>Go-around</desc>
+        <binding>
+            <command>property-assign</command>
+            <property>controls/autoflight/autopilot[0]/engage</property>
+            <value type="bool">true</value>
+        </binding>
+        <binding>
+            <command>property-assign</command>
+            <property>controls/autoflight/toga</property>
+            <value type="int">1</value>
+        </binding>
+        
+        <mod-up>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autoflight/toga</property>
+                <value type="int">0</value>
+            </binding>
+        </mod-up>
+    </button>
     <button n="2">
         <desc>Cutoff Switch Left</desc>
         <binding>

@@ -1,6 +1,56 @@
 <?xml version="1.0"?>
 
 <PropertyList>
+    <axis n="0">
+        <desc type="string">Throttle Engine 1</desc>
+        <binding>
+            <condition>
+                <not>
+                    <property>/controls/engines/engine[0]/reverser-act</property>
+                </not>
+            </condition>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/engines/engine[0]/throttle</property>
+            <factor type="double">-0.69</factor>
+            <offset type="double">-0.40</offset>
+            <power type="double">1</power>
+        </binding>
+        <binding>
+            <condition>
+                <property>/controls/engines/engine[0]/reverser-act</property>
+            </condition>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/engines/engine[0]/throttle</property>
+            <factor type="double">4</factor>
+            <offset type="double">-0.75</offset>
+            <power type="double">1</power>
+        </binding>
+    </axis>
+    <axis n="1">
+        <desc type="string">Throttle Engine 2</desc>
+        <binding>
+            <condition>
+                <not>
+                    <property>/controls/engines/engine[1]/reverser-act</property>
+                </not>
+            </condition>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/engines/engine[1]/throttle</property>
+            <factor type="double">-0.69</factor>
+            <offset type="double">-0.40</offset>
+            <power type="double">1</power>
+        </binding>
+        <binding>
+            <condition>
+                <property>/controls/engines/engine[1]/reverser-act</property>
+            </condition>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/engines/engine[1]/throttle</property>
+            <factor type="double">4</factor>
+            <offset type="double">-0.75</offset>
+            <power type="double">1</power>
+        </binding>
+    </axis>
     <button n="0">
         <desc>Engine / Cutoff Switch Left</desc>
         <binding>
