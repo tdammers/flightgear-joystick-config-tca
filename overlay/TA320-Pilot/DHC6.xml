@@ -28,4 +28,20 @@
             <value type="bool">true</value>
         </binding>
     </button>
+    <button n="6">
+        <desc>Parking Brake Release</desc>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/gear/parkingbrake-lever</property>
+            <value type="int">0</value>
+        </binding>
+    </button>
+    <button n="7">
+        <desc>Parking Brake Set</desc>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/gear/parkingbrake-lever</property>
+            <value type="int">1</value>
+        </binding>
+    </button>
 </PropertyList>
