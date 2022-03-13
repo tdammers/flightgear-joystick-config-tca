@@ -129,7 +129,7 @@
             <property type="string">/controls/flight/rudder</property>
             <factor type="double">1</factor>
             <offset type="double">0</offset>
-            <power type="double">1</power>
+            <power type="double">2</power>
         </binding>
     </axis>
 </PropertyList>

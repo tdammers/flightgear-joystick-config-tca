@@ -57,19 +57,17 @@
         <binding>
             <command type="string">property-assign</command>
             <property>controls/autoflight/at-disconnect</property>
-            <value type="bool">true</value>
+            <value type="int">1</value>
         </binding>
         <mod-up>
             <binding>
                 <command type="string">property-assign</command>
                 <property>controls/autoflight/at-disconnect</property>
-                <value type="bool">false</value>
+                <value type="int">0</value>
             </binding>
         </mod-up>
     </button>
-    
     <button n="1">
-        <name>q</name>
         <desc>TO/GA button</desc>
         <repeatable type="bool">true</repeatable>
         <binding>
