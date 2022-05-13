@@ -11,7 +11,7 @@
             <power type="double">1</power>
         </binding>
     </axis>
-    <button n="0">
+    <button n="2">
         <desc type="string">TCS</desc>
         <binding>
             <command type="string">property-assign</command>

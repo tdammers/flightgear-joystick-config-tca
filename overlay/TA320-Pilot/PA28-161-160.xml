@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <PropertyList>
-    <button n="0">
+    <button n="2">
         <desc type="string">CWS</desc>
         <binding>
             <command type="string">property-assign</command>
