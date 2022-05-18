@@ -11,6 +11,21 @@
             <power type="double">1</power>
         </binding>
     </axis>
+    <button n="1">
+        <desc type="string">Tiller enable</desc>
+        <binding>
+            <command type="string">property-assign</command>
+            <property>controls/gear/tiller-pushed</property>
+            <value type="bool">true</value>
+        </binding>
+        <mod-up>
+            <binding>
+                <command type="string">property-assign</command>
+                <property>controls/gear/tiller-pushed</property>
+                <value type="bool">false</value>
+            </binding>
+        </mod-up>
+    </button>
     <button n="2">
         <desc type="string">TCS</desc>
         <binding>
@@ -37,6 +52,21 @@
             <binding>
                 <command type="string">property-assign</command>
                 <property>controls/autoflight/disconnect</property>
+                <value type="bool">false</value>
+            </binding>
+        </mod-up>
+    </button>
+    <button n="12">
+        <desc type="string">NWS Disconnect</desc>
+        <binding>
+            <command type="string">property-assign</command>
+            <property>controls/gear/nose-wheel-steering-disconnect</property>
+            <value type="bool">true</value>
+        </binding>
+        <mod-up>
+            <binding>
+                <command type="string">property-assign</command>
+                <property>controls/gear/nose-wheel-steering-disconnect</property>
                 <value type="bool">false</value>
             </binding>
         </mod-up>
