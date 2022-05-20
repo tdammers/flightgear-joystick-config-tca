@@ -1,8 +1,24 @@
 <?xml version="1.0"?>
 
 <PropertyList>
+    <button n="0">
+        <desc>Cutoff Lock Left</desc>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/engines/engine[0]/cutoff-lock</property>
+            <value type="bool">false</value>
+        </binding>
+    </button>
+    <button n="1">
+        <desc>Cutoff Lock Right</desc>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/engines/engine[1]/cutoff-lock</property>
+            <value type="bool">false</value>
+        </binding>
+    </button>
     <button n="2">
-        <desc>Engine / Cutoff Switch Left</desc>
+        <desc>Ignition Switch Left</desc>
         <binding>
             <command type="string">property-assign</command>
             <property type="string">/controls/engines/engine[0]/ignition-sw</property>
@@ -18,7 +34,7 @@
         </mod-up>
     </button>
     <button n="3">
-        <desc>Engine / Cutoff Switch Right</desc>
+        <desc>Ignition Switch Right</desc>
         <binding>
             <command type="string">property-assign</command>
             <property type="string">/controls/engines/engine[1]/ignition-sw</property>
