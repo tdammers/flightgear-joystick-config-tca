@@ -14,7 +14,7 @@
         <desc type="string">A/P Disconnect</desc>
         <command>nasal</command>
         <script>
-            fcu.FCUController.APDisc();
+            fcu.FCUController.APDisc(1, 1);
         </script>
     </button>
 </PropertyList>

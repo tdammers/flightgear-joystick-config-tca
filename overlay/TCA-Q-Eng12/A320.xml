@@ -152,13 +152,13 @@
         <desc>Ignition Knob Left</desc>
         <binding>
             <command type="string">property-assign</command>
-            <property>controls/engines/engine-start-switch</property>
+            <property>controls/ignition/start-sw</property>
             <value type="int">0</value>
         </binding>
         <mod-up>
             <binding>
                 <command type="string">property-assign</command>
-                <property>controls/engines/engine-start-switch</property>
+                <property>controls/ignition/start-sw</property>
                 <value type="int">1</value>
             </binding>
         </mod-up>
@@ -167,13 +167,13 @@
         <desc>Ignition Knob Right</desc>
         <binding>
             <command type="string">property-assign</command>
-            <property>controls/engines/engine-start-switch</property>
+            <property>controls/ignition/start-sw</property>
             <value type="int">2</value>
         </binding>
         <mod-up>
             <binding>
                 <command type="string">property-assign</command>
-                <property>controls/engines/engine-start-switch</property>
+                <property>controls/ignition/start-sw</property>
                 <value type="int">1</value>
             </binding>
         </mod-up>
