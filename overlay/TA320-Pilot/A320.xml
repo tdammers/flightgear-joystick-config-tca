@@ -12,9 +12,12 @@
     
     <button n="3">
         <desc type="string">A/P Disconnect</desc>
-        <command>nasal</command>
-        <script>
-            fcu.FCUController.APDisc(1, 1);
-        </script>
+        <binding>
+            <command>nasal</command>
+            <script>
+                print("AP DISCO");
+                fcu.FCUController.APDisc(1, 1);
+            </script>
+        </binding>
     </button>
 </PropertyList>
