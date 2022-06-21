@@ -23,6 +23,7 @@ var family_patterns = [
     [ "Embraer1[79][05]", "E170" ],
     [ "EmbraerLineage1000", "E170" ],
     [ "A320*", "A320" ],
+    [ "MD-11*", "MD11" ],
 ];
 
 var subtype = getprop('/sim/aircraft');
