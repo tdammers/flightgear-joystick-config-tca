@@ -9,4 +9,24 @@
             <power type="double">1</power>
         </binding>
     </axis>
+    <button n="3">
+        <desc type="string">A/P Disconnect</desc>
+        <binding>
+            <command>nasal</command>
+            <script>
+                setprop("/controls/switches/ap-yoke-button1", 1);
+                setprop("/controls/switches/ap-yoke-button2", 1);
+                libraries.apPanel.apDisc();
+            </script>
+        </binding>
+        <mod-up>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    setprop("/controls/switches/ap-yoke-button1", 0);
+                    setprop("/controls/switches/ap-yoke-button2", 0);
+                </script>
+            </binding>
+        </mod-up>
+    </button>
 </PropertyList>
