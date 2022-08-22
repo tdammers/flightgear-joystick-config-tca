@@ -1,0 +1,178 @@
+<PropertyList>
+    <axis n="0">
+        <desc type="string">Throttle Engine 1 / 2</desc>
+        <binding>
+            <condition>
+                <not>
+                    <property>/controls/engines/engine[0]/reverser</property>
+                </not>
+            </condition>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/engines/engine[0]/throttle</property>
+            <factor type="double">-0.72</factor>
+            <offset type="double">-0.40</offset>
+            <power type="double">1</power>
+        </binding>
+        <binding>
+            <condition>
+                <property>/controls/engines/engine[0]/reverser</property>
+            </condition>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/engines/engine[0]/throttle</property>
+            <factor type="double">4</factor>
+            <offset type="double">-0.75</offset>
+            <power type="double">1</power>
+        </binding>
+        <binding>
+            <condition>
+                <not>
+                    <property>/controls/engines/engine[1]/reverser</property>
+                </not>
+            </condition>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/engines/engine[1]/throttle</property>
+            <factor type="double">-0.72</factor>
+            <offset type="double">-0.40</offset>
+            <power type="double">1</power>
+        </binding>
+        <binding>
+            <condition>
+                <property>/controls/engines/engine[1]/reverser</property>
+            </condition>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/engines/engine[1]/throttle</property>
+            <factor type="double">4</factor>
+            <offset type="double">-0.75</offset>
+            <power type="double">1</power>
+        </binding>
+    </axis>
+    <button n="11">
+        <desc type="string">Reverser 1 / 2</desc>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/engines/engine[0]/reverser</property>
+            <value type="bool">true</value>
+        </binding>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/engines/engine[1]/reverser</property>
+            <value type="bool">true</value>
+        </binding>
+        <mod-up>
+            <binding>
+                <command type="string">property-assign</command>
+                <property type="string">/controls/engines/engine[0]/reverser</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command type="string">property-assign</command>
+                <property type="string">/controls/engines/engine[1]/reverser</property>
+                <value type="bool">false</value>
+            </binding>
+        </mod-up>
+    </button>
+    <axis n="1">
+        <desc type="string">Throttle Engine 1 / 2</desc>
+        <binding>
+            <condition>
+                <not>
+                    <property>/controls/engines/engine[2]/reverser</property>
+                </not>
+            </condition>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/engines/engine[2]/throttle</property>
+            <factor type="double">-0.72</factor>
+            <offset type="double">-0.40</offset>
+            <power type="double">1</power>
+        </binding>
+        <binding>
+            <condition>
+                <property>/controls/engines/engine[2]/reverser</property>
+            </condition>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/engines/engine[2]/throttle</property>
+            <factor type="double">4</factor>
+            <offset type="double">-0.75</offset>
+            <power type="double">1</power>
+        </binding>
+        <binding>
+            <condition>
+                <not>
+                    <property>/controls/engines/engine[3]/reverser</property>
+                </not>
+            </condition>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/engines/engine[3]/throttle</property>
+            <factor type="double">-0.72</factor>
+            <offset type="double">-0.40</offset>
+            <power type="double">1</power>
+        </binding>
+        <binding>
+            <condition>
+                <property>/controls/engines/engine[3]/reverser</property>
+            </condition>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/engines/engine[3]/throttle</property>
+            <factor type="double">4</factor>
+            <offset type="double">-0.75</offset>
+            <power type="double">1</power>
+        </binding>
+    </axis>
+    <button n="15">
+        <desc type="string">Reverser 1 / 2</desc>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/engines/engine[2]/reverser</property>
+            <value type="bool">true</value>
+        </binding>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/engines/engine[3]/reverser</property>
+            <value type="bool">true</value>
+        </binding>
+        <mod-up>
+            <binding>
+                <command type="string">property-assign</command>
+                <property type="string">/controls/engines/engine[2]/reverser</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command type="string">property-assign</command>
+                <property type="string">/controls/engines/engine[3]/reverser</property>
+                <value type="bool">false</value>
+            </binding>
+        </mod-up>
+    </button>
+    
+    <button n="4">
+        <desc>Taxi Lights</desc>
+        <binding>
+            <command type="string">property-toggle</command>
+            <property type="string">/controls/lighting/taxi</property>
+        </binding>
+    </button>
+    <button n="5">
+        <desc>Landing Lights</desc>
+        <binding>
+            <command type="string">property-toggle</command>
+            <property type="string">/controls/lighting/landing-extend-left</property>
+        </binding>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/lighting/landing-extend-right</property>
+            <property type="string">/controls/lighting/landing-extend-left</property>
+        </binding>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/lighting/landing-left</property>
+            <property type="string">/controls/lighting/landing-extend-left</property>
+        </binding>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/lighting/landing-right</property>
+            <property type="string">/controls/lighting/landing-extend-left</property>
+        </binding>
+    </button>
+</PropertyList>
+
+

@@ -1,0 +1,201 @@
+<PropertyList>
+    <axis n="3">
+        <desc type="string">Mixture All Engines</desc>
+        <binding>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/engines/propeller-pitch-all</property>
+            <factor type="double">1</factor>
+            <offset type="double">0</offset>
+            <power type="double">1</power>
+        </binding>
+    </axis>
+
+    <axis n="5">
+        <desc type="string">Elevator Trim inc.</desc>
+        <low>
+            <binding>
+                <condition>
+                    <property>autopilot/switches/ap</property>
+                </condition>
+                <command type="string">property-adjust</command>
+                <property>autopilot/settings/target-pitch-deg</property>
+                <step>-0.01</step>
+                <min>-5</min>
+                <max>10</max>
+            </binding>
+            <binding>
+                <condition>
+                    <not>
+                        <property>autopilot/switches/ap</property>
+                    </not>
+                </condition>
+                <command type="string">nasal</command>
+                <script type="string">controls.elevatorTrim(1);</script>
+            </binding>
+            <repeatable type="bool">true</repeatable>
+        </low>
+        <high>
+            <binding>
+                <condition>
+                    <property>autopilot/switches/ap</property>
+                </condition>
+                <command type="string">property-adjust</command>
+                <property>autopilot/settings/target-pitch-deg</property>
+                <step>0.01</step>
+                <min>-5</min>
+                <max>10</max>
+            </binding>
+            <binding>
+                <condition>
+                    <not>
+                        <property>autopilot/switches/ap</property>
+                    </not>
+                </condition>
+                <command type="string">nasal</command>
+                <script type="string">controls.elevatorTrim(-1);</script>
+            </binding>
+            <repeatable type="bool">true</repeatable>
+        </high>
+    </axis>
+
+    <button n="12">
+        <desc type="string">Mixture Rich</desc>
+        <binding>
+            <command>property-adjust</command>
+            <property type="string">/controls/engines/mixture-all</property>
+            <step>-0.05</step>
+            <min>-1</min>
+            <max>1</max>
+            <wrap>0</wrap>
+        </binding>
+    </button>
+    <button n="13">
+        <desc type="string">Mixture Lean</desc>
+        <binding>
+            <command>property-adjust</command>
+            <property type="string">/controls/engines/mixture-all</property>
+            <step>0.05</step>
+            <min>-1</min>
+            <max>1</max>
+            <wrap>0</wrap>
+        </binding>
+    </button>
+    
+    <button n="11">
+        <desc type="string">Blower Low</desc>
+        <binding>
+            <command>property-assign</command>
+            <property>fdm/jsbsim/propulsion/engine[0]/boost-speed</property>
+            <value>0</value>
+        </binding>
+        <binding>
+            <command>property-assign</command>
+            <property>fdm/jsbsim/propulsion/engine[1]/boost-speed</property>
+            <value>0</value>
+        </binding>
+        <binding>
+            <command>property-assign</command>
+            <property>fdm/jsbsim/propulsion/engine[2]/boost-speed</property>
+            <value>0</value>
+        </binding>
+        <binding>
+            <command>property-assign</command>
+            <property>fdm/jsbsim/propulsion/engine[3]/boost-speed</property>
+            <value>0</value>
+        </binding>
+    </button>
+    <button n="14">
+        <desc type="string">Blower High</desc>
+        <binding>
+            <command>property-assign</command>
+            <property>fdm/jsbsim/propulsion/engine[0]/boost-speed</property>
+            <value>1</value>
+        </binding>
+        <binding>
+            <command>property-assign</command>
+            <property>fdm/jsbsim/propulsion/engine[1]/boost-speed</property>
+            <value>1</value>
+        </binding>
+        <binding>
+            <command>property-assign</command>
+            <property>fdm/jsbsim/propulsion/engine[2]/boost-speed</property>
+            <value>1</value>
+        </binding>
+        <binding>
+            <command>property-assign</command>
+            <property>fdm/jsbsim/propulsion/engine[3]/boost-speed</property>
+            <value>1</value>
+        </binding>
+    </button>
+
+    <button n="10">
+        <desc type="string">Cowl Flaps Open</desc>
+        <binding>
+            <command>property-adjust</command>
+            <property>controls/engines/engine[0]/cowl-flaps-norm</property>
+            <step>0.1</step>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+        </binding>
+        <binding>
+            <command>property-adjust</command>
+            <property>controls/engines/engine[1]/cowl-flaps-norm</property>
+            <step>0.1</step>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+        </binding>
+        <binding>
+            <command>property-adjust</command>
+            <property>controls/engines/engine[2]/cowl-flaps-norm</property>
+            <step>0.1</step>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+        </binding>
+        <binding>
+            <command>property-adjust</command>
+            <property>controls/engines/engine[3]/cowl-flaps-norm</property>
+            <step>0.1</step>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+        </binding>
+    </button>
+    <button n="15">
+        <desc type="string">Cowl Flaps Close</desc>
+        <binding>
+            <command>property-adjust</command>
+            <property>controls/engines/engine[0]/cowl-flaps-norm</property>
+            <step>-0.1</step>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+        </binding>
+        <binding>
+            <command>property-adjust</command>
+            <property>controls/engines/engine[1]/cowl-flaps-norm</property>
+            <step>-0.1</step>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+        </binding>
+        <binding>
+            <command>property-adjust</command>
+            <property>controls/engines/engine[2]/cowl-flaps-norm</property>
+            <step>-0.1</step>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+        </binding>
+        <binding>
+            <command>property-adjust</command>
+            <property>controls/engines/engine[3]/cowl-flaps-norm</property>
+            <step>-0.1</step>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+        </binding>
+    </button>
+</PropertyList>
