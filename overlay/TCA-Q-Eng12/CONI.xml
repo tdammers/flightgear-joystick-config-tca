@@ -143,7 +143,56 @@
             </binding>
         </mod-up>
     </button>
+
+    <button n="0">
+        <desc type="string">Toggle Reverser Lock</desc>
+        <binding>
+            <command type="string">property-toggle</command>
+            <property>controls/engines/reverser_allow</property>
+        </binding>
+    </button>
+    <button n="1">
+        <desc>TO/GA button</desc>
+        <repeatable type="bool">true</repeatable>
+        <binding>
+            <command>property-assign</command>
+            <property>/robocrew/common/flight-phase</property>
+            <value type="string">TAKEOFF</value>
+        </binding>
+    </button>
     
+    <!--
+    <button n="2">
+        <desc></desc>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/fuel/switches/pump</property>
+            <value type="bool">true</value>
+        </binding>
+        <mod-up>
+            <binding>
+                <command type="string">property-assign</command>
+                <property type="string">/controls/fuel/switches/pump</property>
+                <value type="bool">false</value>
+            </binding>
+        </mod-up>
+    </button>
+    -->
+    <button n="3">
+        <desc>Autopilot Altitude Lock</desc>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">autopilot/switches/alt</property>
+            <value type="bool">true</value>
+        </binding>
+        <mod-up>
+            <binding>
+                <command type="string">property-assign</command>
+                <property type="string">autopilot/switches/alt</property>
+                <value type="bool">false</value>
+            </binding>
+        </mod-up>
+    </button>
     <button n="4">
         <desc>Taxi Lights</desc>
         <binding>
@@ -173,6 +222,35 @@
             <property type="string">/controls/lighting/landing-extend-left</property>
         </binding>
     </button>
+
+    <button n="6">
+        <desc>Ignition Knob Left (Flight Path)</desc>
+        <binding>
+            <command>property-assign</command>
+            <property>autopilot/settings/flight-path</property>
+            <value type="int">0</value>
+        </binding>
+        <mod-up>
+            <binding>
+                <command>property-assign</command>
+                <property>autopilot/settings/flight-path</property>
+                <value type="int">1</value>
+            </binding>
+        </mod-up>
+    </button>
+    <button n="7">
+        <desc>Ignition Knob Right (Flight Path)</desc>
+        <binding>
+            <command>property-assign</command>
+            <property>autopilot/settings/flight-path</property>
+            <value type="int">3</value>
+        </binding>
+        <mod-up>
+            <binding>
+                <command>property-assign</command>
+                <property>autopilot/settings/flight-path</property>
+                <value type="int">1</value>
+            </binding>
+        </mod-up>
+    </button>
 </PropertyList>
-
-
