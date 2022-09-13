@@ -145,15 +145,15 @@
     </button>
 
     <button n="0">
-        <desc type="string">Toggle Reverser Lock</desc>
+        <desc type="string">Disconnect robocrew</desc>
         <binding>
-            <command type="string">property-toggle</command>
-            <property>controls/engines/reverser_allow</property>
+            <command>property-assign</command>
+            <property>/robocrew/common/flight-phase</property>
+            <value type="string">OFF</value>
         </binding>
     </button>
     <button n="1">
         <desc>TO/GA button</desc>
-        <repeatable type="bool">true</repeatable>
         <binding>
             <command>property-assign</command>
             <property>/robocrew/common/flight-phase</property>
