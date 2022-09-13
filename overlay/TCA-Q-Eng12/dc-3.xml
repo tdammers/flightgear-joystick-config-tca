@@ -26,14 +26,14 @@
         <desc>Cutoff Switch Left</desc>
         <binding>
             <command>property-assign</command>
-            <property>controls/engines/engine[0]/magnetos</property>
+            <property>controls/fuel/tank[0]/boost-pump</property>
             <value type="int">3</value>
         </binding>
         
         <mod-up>
             <binding>
                 <command>property-assign</command>
-                <property>controls/engines/engine[0]/magnetos</property>
+                <property>controls/fuel/tank[0]/boost-pump</property>
                 <value type="int">0</value>
             </binding>
         </mod-up>
@@ -42,14 +42,14 @@
         <desc>Cutoff Switch Right</desc>
         <binding>
             <command>property-assign</command>
-            <property>controls/engines/engine[1]/magnetos</property>
+            <property>controls/fuel/tank[1]/boost-pump</property>
             <value type="int">3</value>
         </binding>
         
         <mod-up>
             <binding>
                 <command>property-assign</command>
-                <property>controls/engines/engine[1]/magnetos</property>
+                <property>controls/fuel/tank[1]/boost-pump</property>
                 <value type="int">0</value>
             </binding>
         </mod-up>
@@ -69,33 +69,54 @@
             <property type="string">/controls/lighting/landing-lights[1]</property>
         </binding>
     </button>
+
     <button n="6">
-        <desc>Ignition Knob Left</desc>
+        <desc>Ignition Knob Left (Tank Selector)</desc>
         <binding>
             <command>property-assign</command>
-            <property>controls/engines/engine[0]/starter</property>
-            <value type="bool">true</value>
+            <property>controls/fuel/left-valve</property>
+            <value type="int">0</value>
+        </binding>
+        <binding>
+            <command>property-assign</command>
+            <property>controls/fuel/right-valve</property>
+            <value type="int">0</value>
         </binding>
         <mod-up>
             <binding>
                 <command>property-assign</command>
-                <property>controls/engines/engine[0]/starter</property>
-                <value type="bool">false</value>
+                <property>controls/fuel/left-valve</property>
+                <value type="int">3</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/fuel/right-valve</property>
+                <value type="int">2</value>
             </binding>
         </mod-up>
     </button>
     <button n="7">
-        <desc>Ignition Knob Right</desc>
+        <desc>Ignition Knob Right (Tank Selector)</desc>
         <binding>
             <command>property-assign</command>
-            <property>controls/engines/engine[1]/starter</property>
-            <value type="bool">true</value>
+            <property>controls/fuel/left-valve</property>
+            <value type="int">4</value>
+        </binding>
+        <binding>
+            <command>property-assign</command>
+            <property>controls/fuel/right-valve</property>
+            <value type="int">1</value>
         </binding>
         <mod-up>
             <binding>
                 <command>property-assign</command>
-                <property>controls/engines/engine[1]/starter</property>
-                <value type="bool">false</value>
+                <property>controls/fuel/left-valve</property>
+                <value type="int">3</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/fuel/right-valve</property>
+                <value type="int">2</value>
             </binding>
         </mod-up>
     </button>
