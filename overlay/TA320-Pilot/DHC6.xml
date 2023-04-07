@@ -25,7 +25,7 @@
         <binding>
             <command>property-assign</command>
             <property>controls/autopilot/settings/apflag</property>
-            <value type="bool">true</value>
+            <value type="bool">false</value>
         </binding>
     </button>
     <button n="6">

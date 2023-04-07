@@ -51,6 +51,53 @@
             <power type="double">1</power>
         </binding>
     </axis>
+
+    <axis n="3">
+        <desc type="string">Brake Right</desc>
+        <binding n="0">
+            <command type="string">property-scale</command>
+            <property type="string">/controls/gear/brake-right</property>
+            <factor type="double">-0.5</factor>
+            <offset type="double">-1</offset>
+            <power type="double">1</power>
+            <condition>
+                <not><property>/sim/model/autopush/enabled</property></not>
+            </condition>
+        </binding>
+        <binding n="1">
+            <command type="string">property-scale</command>
+            <property type="string">/sim/model/autopush/target-speed-km_h</property>
+            <factor type="double">12.5</factor>
+            <offset type="double">-1</offset>
+            <power type="double">1</power>
+            <condition>
+                <property>/sim/model/autopush/enabled</property>
+            </condition>
+        </binding>
+    </axis>
+    <axis n="4">
+        <desc type="string">Brake Left</desc>
+        <binding n="0">
+            <command type="string">property-scale</command>
+            <property type="string">/controls/gear/brake-left</property>
+            <factor type="double">-0.5</factor>
+            <offset type="double">-1</offset>
+            <power type="double">1</power>
+            <condition>
+                <not><property>/sim/model/autopush/enabled</property></not>
+            </condition>
+        </binding>
+        <binding n="1">
+            <command type="string">property-scale</command>
+            <property type="string">/sim/model/autopush/target-speed-km_h</property>
+            <factor type="double">-12.5</factor>
+            <offset type="double">-1</offset>
+            <power type="double">1</power>
+            <condition>
+                <property>/sim/model/autopush/enabled</property>
+            </condition>
+        </binding>
+    </axis>
     
     <button n="0">
         <desc type="string">A/T Disconnect</desc>

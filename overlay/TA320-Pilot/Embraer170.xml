@@ -1,6 +1,29 @@
 <?xml version="1.0"?>
 
 <PropertyList>
+    <axis n="2">
+        <desc type="string">Tiller</desc>
+        <binding n="0">
+            <command type="string">property-scale</command>
+            <property type="string">/controls/gear/tiller-cmd-norm</property>
+            <factor type="double">1</factor>
+            <offset type="double">0</offset>
+            <power type="double">1</power>
+            <condition>
+                <not><property>/sim/model/autopush/enabled</property></not>
+            </condition>
+        </binding>
+        <binding n="1">
+            <command type="string">property-scale</command>
+            <property type="string">/sim/model/autopush/steer-cmd-norm</property>
+            <factor type="double">-1</factor>
+            <offset type="double">0</offset>
+            <power type="double">1</power>
+            <condition>
+                <property>/sim/model/autopush/enabled</property>
+            </condition>
+        </binding>
+    </axis>
     <axis n="3">
         <desc type="string">Speedbrake</desc>
         <binding>

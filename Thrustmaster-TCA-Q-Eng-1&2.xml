@@ -32,7 +32,7 @@
             </condition>
             <command type="string">property-scale</command>
             <property type="string">/controls/engines/engine[0]/throttle</property>
-            <factor type="double">-0.69</factor>
+            <factor type="double">-0.72</factor>
             <offset type="double">-0.40</offset>
             <power type="double">1</power>
         </binding>
@@ -72,7 +72,7 @@
             </condition>
             <command type="string">property-scale</command>
             <property type="string">/controls/engines/engine[1]/throttle</property>
-            <factor type="double">-0.69</factor>
+            <factor type="double">-0.72</factor>
             <offset type="double">-0.40</offset>
             <power type="double">1</power>
         </binding>
