@@ -2,7 +2,8 @@
 
 <PropertyList>
     <name type="string">Thrustmaster TCA Q-Eng 1&amp;2</name>
-    
+    <name type="string">TCA Q-Eng 1&amp;2</name>
+
     <nasal>
         <script><![CDATA[
             if (globals['tca'] == nil) {

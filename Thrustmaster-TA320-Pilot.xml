@@ -2,6 +2,7 @@
 
 <PropertyList>
     <name type="string">Thrustmaster T.A320 Pilot</name>
+    <name type="string">T.A320 Pilot</name>
     
     <nasal>
         <script><![CDATA[
