@@ -112,6 +112,15 @@
             <offset type="double">-1</offset>
             <power type="double">1</power>
         </binding>
+        <!--
+        <binding n="2">
+            <command type="string">property-scale</command>
+            <property type="string">addons/by-id/nl.tobiasdammers.auto-followme/controls/accelerator-norm</property>
+            <factor type="double">-0.5</factor>
+            <offset type="double">-1</offset>
+            <power type="double">1</power>
+        </binding>
+        -->
     </axis>
     <axis n="4">
         <desc type="string">Brake Left</desc>
@@ -122,6 +131,15 @@
             <offset type="double">-1</offset>
             <power type="double">1</power>
         </binding>
+        <!--
+        <binding n="2">
+            <command type="string">property-scale</command>
+            <property type="string">addons/by-id/nl.tobiasdammers.auto-followme/controls/brake-norm</property>
+            <factor type="double">-0.5</factor>
+            <offset type="double">-1</offset>
+            <power type="double">1</power>
+        </binding>
+        -->
     </axis>
     <axis n="6">
         <desc type="string">Rudder</desc>

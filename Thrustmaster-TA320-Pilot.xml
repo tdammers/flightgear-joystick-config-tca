@@ -52,6 +52,15 @@
             <offset type="double">0</offset>
             <power type="double">1</power>
         </binding>
+        <!--
+        <binding n="2">
+            <command type="string">property-scale</command>
+            <property type="string">addons/by-id/nl.tobiasdammers.auto-followme/controls/steer-norm</property>
+            <factor type="double">1</factor>
+            <offset type="double">0</offset>
+            <power type="double">1</power>
+        </binding>
+        -->
     </axis>
     <axis n="3">
         <desc type="string">Mixture All Engines</desc>
@@ -68,14 +77,14 @@
         <low>
             <binding>
                 <command type="string">nasal</command>
-                <script type="string">controls.aileronTrim(1);</script>
+                <script type="string">controls.rudderTrim(-1);</script>
             </binding>
             <repeatable type="bool">true</repeatable>
         </low>
         <high>
             <binding>
                 <command type="string">nasal</command>
-                <script type="string">controls.aileronTrim(-1);</script>
+                <script type="string">controls.rudderTrim(1);</script>
             </binding>
             <repeatable type="bool">true</repeatable>
         </high>

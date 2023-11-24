@@ -2,7 +2,7 @@
 
 <PropertyList>
     <axis n="0">
-        <desc type="string">Throttle Engine 1 + 3</desc>
+        <desc type="string">Throttle Engine 1</desc>
         <binding>
             <condition>
                 <not>
@@ -27,7 +27,7 @@
         </binding>
     </axis>
     <button n="11">
-        <desc type="string">Reverser 1 + 3</desc>
+        <desc type="string">Reverser 1</desc>
         <binding>
             <command type="string">property-assign</command>
             <property type="string">/controls/engines/engine[0]/reverse-engage</property>
@@ -42,7 +42,7 @@
         </mod-up>
     </button>
     <axis n="1">
-        <desc type="string">Throttle Engine 2</desc>
+        <desc type="string">Throttle Engine 2 + 3</desc>
         <binding>
             <condition>
                 <not>
@@ -89,7 +89,7 @@
         </binding>
     </axis>
     <button n="15">
-        <desc type="string">Reverser 2</desc>
+        <desc type="string">Reverser 2 + 3</desc>
         <binding>
             <command type="string">property-assign</command>
             <property type="string">/controls/engines/engine[1]/reverse-engage</property>
@@ -138,7 +138,7 @@
         <binding>
             <command>nasal</command>
             <script>
-                setprop("/controls/switches/ga-button", 1);
+                setprop("/controls/cockpit/toga1", 1);
                 libraries.apPanel.toga();
             </script>
         </binding>
@@ -146,7 +146,7 @@
             <binding>
                 <command>nasal</command>
                 <script>
-                    setprop("/controls/switches/ga-button", 0);
+                    setprop("/controls/cockpit/toga1", 0);
                 </script>
             </binding>
         </mod-up>
