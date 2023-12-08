@@ -180,6 +180,28 @@
         </mod-up>
     </button>
 
+    <button n="16">
+        <desc>RUD TRIM RESET PB</desc>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/cockpit/rudder-trim-reset-translate</property>
+				<value>0.0015</value>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/flight/rudder-trim</property>
+				<value>0</value>
+			</binding>
+
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/cockpit/rudder-trim-reset-translate</property>
+					<value>0.0</value>
+				</binding>
+			</mod-up>
+    </button>
+
     <button n="17">
       <desc type="string">Rudder Trim left</desc>
       <repeatable type="bool">true</repeatable>
