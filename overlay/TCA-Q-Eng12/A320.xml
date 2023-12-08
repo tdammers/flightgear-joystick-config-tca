@@ -163,6 +163,7 @@
             </binding>
         </mod-up>
     </button>
+
     <button n="7">
         <desc>Ignition Knob Right</desc>
         <binding>
@@ -178,4 +179,66 @@
             </binding>
         </mod-up>
     </button>
+
+    <button n="17">
+      <desc type="string">Rudder Trim left</desc>
+      <repeatable type="bool">true</repeatable>
+         <binding>
+             <command type="string">nasal</command>
+             <script type="string">controls.rudderTrim(-1);</script>
+         </binding>
+         <binding>
+            <command>property-assign</command>
+            <property>controls/switches/rudder-trim</property>
+            <value>-1</value>
+         </binding>
+
+        <mod-up>
+         <binding>
+            <command>property-assign</command>
+            <property>controls/switches/rudder-trim</property>
+            <value>0</value>
+         </binding>
+        </mod-up>
+    </button>
+
+    <button n="18">
+      <desc type="string">Rudder Trim right</desc>
+      <repeatable type="bool">true</repeatable>
+         <binding>
+             <command type="string">nasal</command>
+             <script type="string">controls.rudderTrim(1);</script>
+         </binding>
+         <binding>
+            <command>property-assign</command>
+            <property>controls/switches/rudder-trim</property>
+            <value>1</value>
+         </binding>
+
+        <mod-up>
+         <binding>
+            <command>property-assign</command>
+            <property>controls/switches/rudder-trim</property>
+            <value>0</value>
+         </binding>
+        </mod-up>
+    </button>
+
+    <button n="19">
+        <desc>Parking Brake Handle</desc>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/gear/brake-parking</property>
+            <value type="int">1</value>
+        </binding>
+
+        <mod-up>
+            <binding>
+                <command type="string">property-assign</command>
+                <property type="string">/controls/gear/brake-parking</property>
+                <value type="int">0</value>
+            </binding>
+      </mod-up>
+    </button>
+
 </PropertyList>
