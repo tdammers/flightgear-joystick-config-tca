@@ -34,7 +34,8 @@
                 TA320_A320.setThrust(0, v);
             </script>
         </binding>
-    </axis>
+    </axis> 
+
     <axis n="1">
         <desc type="string">Throttle Engine 2</desc>
         <binding>
@@ -58,6 +59,28 @@
                 var v = cmdarg().getValue('setting');
                 TA320_A320.setThrust(1, v);
             </script>
+        </binding>
+    </axis>
+    
+    <axis n="2">
+        <desc type="string">Flap Lever</desc>
+        <binding>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/flight/flaps</property>
+            <factor type="double">0.5</factor>
+            <offset type="double">1</offset>
+            <power type="double">1</power>
+        </binding>
+    </axis>
+    
+    <axis n="5">
+        <desc type="string">Speedbrake Lever</desc>
+        <binding>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/flight/speedbrake</property>
+            <factor type="double">0.5</factor>
+            <offset type="double">1</offset>
+            <power type="double">1</power>
         </binding>
     </axis>
     
@@ -259,6 +282,23 @@
                 <command type="string">property-assign</command>
                 <property type="string">/controls/gear/brake-parking</property>
                 <value type="int">0</value>
+            </binding>
+      </mod-up>
+    </button>
+
+    <button n="20">
+        <desc>Gear Lever</desc>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/gear/lever-cockpit</property>
+            <value type="int">1</value>
+        </binding>
+
+        <mod-up>
+            <binding>
+                <command type="string">property-assign</command>
+                <property type="string">/controls/gear/lever-cockpit</property>
+                <value type="int">3</value>
             </binding>
       </mod-up>
     </button>

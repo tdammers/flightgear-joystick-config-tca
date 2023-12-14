@@ -1,5 +1,4 @@
 var setThrust = func (e, v) {
-    print(v);
     if (v > 0.55) {
         setprop('controls/engines/engine[' ~ e ~ ']/reverse-engage', 1);
         setprop('controls/engines/engine[' ~ e ~ ']/reverse-lever', 1);
