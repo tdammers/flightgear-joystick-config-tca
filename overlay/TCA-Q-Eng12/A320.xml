@@ -34,7 +34,8 @@
                 TA320_A320.setThrust(0, v);
             </script>
         </binding>
-    </axis>
+    </axis> 
+
     <axis n="1">
         <desc type="string">Throttle Engine 2</desc>
         <binding>
@@ -58,6 +59,28 @@
                 var v = cmdarg().getValue('setting');
                 TA320_A320.setThrust(1, v);
             </script>
+        </binding>
+    </axis>
+    
+    <axis n="2">
+        <desc type="string">Flap Lever</desc>
+        <binding>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/flight/flaps</property>
+            <factor type="double">0.5</factor>
+            <offset type="double">1</offset>
+            <power type="double">1</power>
+        </binding>
+    </axis>
+    
+    <axis n="5">
+        <desc type="string">Speedbrake Lever</desc>
+        <binding>
+            <command type="string">property-scale</command>
+            <property type="string">/controls/flight/speedbrake</property>
+            <factor type="double">0.5</factor>
+            <offset type="double">1</offset>
+            <power type="double">1</power>
         </binding>
     </axis>
     
@@ -163,6 +186,7 @@
             </binding>
         </mod-up>
     </button>
+
     <button n="7">
         <desc>Ignition Knob Right</desc>
         <binding>
@@ -178,4 +202,104 @@
             </binding>
         </mod-up>
     </button>
+
+    <button n="16">
+        <desc>RUD TRIM RESET PB</desc>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/cockpit/rudder-trim-reset-translate</property>
+				<value>0.0015</value>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/flight/rudder-trim</property>
+				<value>0</value>
+			</binding>
+
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/cockpit/rudder-trim-reset-translate</property>
+					<value>0.0</value>
+				</binding>
+			</mod-up>
+    </button>
+
+    <button n="17">
+      <desc type="string">Rudder Trim left</desc>
+      <repeatable type="bool">true</repeatable>
+         <binding>
+             <command type="string">nasal</command>
+             <script type="string">controls.rudderTrim(-1);</script>
+         </binding>
+         <binding>
+            <command>property-assign</command>
+            <property>controls/switches/rudder-trim</property>
+            <value>-1</value>
+         </binding>
+
+        <mod-up>
+         <binding>
+            <command>property-assign</command>
+            <property>controls/switches/rudder-trim</property>
+            <value>0</value>
+         </binding>
+        </mod-up>
+    </button>
+
+    <button n="18">
+      <desc type="string">Rudder Trim right</desc>
+      <repeatable type="bool">true</repeatable>
+         <binding>
+             <command type="string">nasal</command>
+             <script type="string">controls.rudderTrim(1);</script>
+         </binding>
+         <binding>
+            <command>property-assign</command>
+            <property>controls/switches/rudder-trim</property>
+            <value>1</value>
+         </binding>
+
+        <mod-up>
+         <binding>
+            <command>property-assign</command>
+            <property>controls/switches/rudder-trim</property>
+            <value>0</value>
+         </binding>
+        </mod-up>
+    </button>
+
+    <button n="19">
+        <desc>Parking Brake Handle</desc>
+        <binding>
+            <command type="string">property-assign</command>
+            <property type="string">/controls/gear/brake-parking</property>
+            <value type="int">1</value>
+        </binding>
+
+        <mod-up>
+            <binding>
+                <command type="string">property-assign</command>
+                <property type="string">/controls/gear/brake-parking</property>
+                <value type="int">0</value>
+            </binding>
+      </mod-up>
+    </button>
+
+    <button n="20">
+        <desc>Gear Lever</desc>
+         <binding>
+            <command type="string">nasal</command>
+            <script type="string">controls.gearDown(-1);</script>
+            <module type="string">__js1</module>
+         </binding>
+         <mod-up>
+            <binding>
+               <command type="string">nasal</command>
+               <script type="string">controls.gearDown(1);</script>
+               <module type="string">__js1</module>
+            </binding>
+         </mod-up>
+    </button>
+
 </PropertyList>
