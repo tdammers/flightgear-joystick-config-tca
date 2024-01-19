@@ -288,19 +288,18 @@
 
     <button n="20">
         <desc>Gear Lever</desc>
-        <binding>
-            <command type="string">property-assign</command>
-            <property type="string">/controls/gear/lever-cockpit</property>
-            <value type="int">1</value>
-        </binding>
-
-        <mod-up>
+         <binding>
+            <command type="string">nasal</command>
+            <script type="string">controls.gearDown(-1);</script>
+            <module type="string">__js1</module>
+         </binding>
+         <mod-up>
             <binding>
-                <command type="string">property-assign</command>
-                <property type="string">/controls/gear/lever-cockpit</property>
-                <value type="int">3</value>
+               <command type="string">nasal</command>
+               <script type="string">controls.gearDown(1);</script>
+               <module type="string">__js1</module>
             </binding>
-      </mod-up>
+         </mod-up>
     </button>
 
 </PropertyList>
